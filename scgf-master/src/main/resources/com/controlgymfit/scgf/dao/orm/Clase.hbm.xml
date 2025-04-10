@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.controlgymfit.scgf.modelo.entidad">
+	<class name="Clase" table="clases">
+    	<comment>Mapeo tabla deClases</comment>
+    	
+        <id name="id">
+            <column name="id" length="10" not-null="true" sql-type="INTEGER"/>
+            <generator class="identity"/>
+        </id>
+        
+        <property name="nombre">
+			<column name="nombre" length="50" not-null="true" sql-type="VARCHAR(50)" />
+		</property>
+		
+		<property name="descripcion">
+			<column name="descripcion" length="100" not-null="true" sql-type="VARCHAR(150)" />
+		</property>
+		
+        <many-to-one name="empresa" column="idEmpresa" class="com.controlgymfit.scgf.modelo.entidad.Empresa"
+			update="true" insert="true" lazy="false">		
+		</many-to-one>
+        
+        <many-to-one name="usuario" column="idUsuario" class="com.controlgymfit.scgf.modelo.entidad.Usuario"
+			update="true" insert="true" lazy="false">		
+		</many-to-one>
+        
+        <property name="estado" column="estado">
+    		<type name="org.hibernate.type.EnumType">
+        	<param name="enumClass">com.controlgymfit.scgf.util.enums.EstadoCatalogo</param>
+    		</type>
+		</property>
+        
+         <property name="fechaHoraInicio">
+        	<column name="fechaHoraInicio" length="100" not-null="true" sql-type="Date"/>
+        </property>
+        
+         <property name="fechaHoraFin">
+        	<column name="fechaHoraFin" length="100" not-null="true" sql-type="Date"/>
+        </property>
+        
+        <property name="capacidadMaxima">
+        	<column name="capacidadMaxima" length="10" not-null="true" sql-type="INTEGER"/>
+        </property>
+        
+        <property name="usuarioAlta">
+        	<column name="usuarioAlta" length="100" not-null="true" sql-type="Varchar(45)"/>
+        </property>
+        
+         <property name="fechaAlta">
+        	<column name="fechaAlta" length="100" not-null="true" sql-type="Date"/>
+        </property>
+        
+        <property name="usuarioModifica">
+        	<column name="usuarioModifica" length="30" not-null="true" sql-type="VARCHAR(30)"/>
+        </property>
+        
+        <property name="fechaModifica">
+        	<column name="fechaModifica" length="100" not-null="true" sql-type="Date"/>
+        </property>
+
+     </class>
+</hibernate-mapping>

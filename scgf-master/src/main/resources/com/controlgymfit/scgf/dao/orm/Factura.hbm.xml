@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.controlgymfit.scgf.modelo.entidad">
+	<class name="Factura" table="facturas">
+    	<comment>Mapeo tabla de Facturas</comment>
+    	
+        <id name="id">
+            <column name="id" length="10" not-null="true" sql-type="INTEGER"/>
+            <generator class="identity"/>
+        </id>
+         <property name="estado" column="estado"  not-null="true">
+			<type name="org.hibernate.type.EnumType">
+			   <param name="enumClass">com.controlgymfit.scgf.util.enums.EstadoFactura</param>
+			   <param name="type">12</param>
+			   <param name="useNamed">true</param>			   
+			</type>
+		</property>       
+        <property name="idEmpresa" type="java.lang.Integer">
+            <column name="idEmpresa" />
+        </property>
+        
+        <many-to-one name="cliente" column="idCliente" class="com.controlgymfit.scgf.modelo.entidad.Cliente"
+			update="true" insert="true" lazy="false">		
+		</many-to-one>
+        
+        <property name="uuid">
+        	<column name="uuid" length="45" not-null="true" sql-type="VARCHAR(45)"/>
+        </property>
+        <property name="detalle">
+        	<column name="detalle" length="100" not-null="true" sql-type="VARCHAR(60)"/>
+        </property>
+        <property name="fechaEmision">
+        	<column name="fechaEmision" length="100" not-null="true" sql-type="Date"/>
+        </property>
+        <property name="subTotal">
+        	<column name="subTotal" length="10" not-null="true" sql-type="DOUBLE"/>
+        </property>
+   		<property name="ivaAplicable">
+        	<column name="ivaAplicable" length="10" not-null="true" sql-type="VARCHAR(10)"/>
+        </property>
+        <property name="valorIva">
+        	<column name="valorIva" length="10" not-null="true" sql-type="DOUBLE"/>
+        </property>
+        <property name="montoPagado">
+        	<column name="montoPagado" length="10" not-null="true" sql-type="DOUBLE"/>
+        </property>
+        <property name="total">
+        	<column name="total" length="10" not-null="true" sql-type="DOUBLE"/>
+        </property>
+        <property name="usuarioAlta">
+        	<column name="usuarioAlta" length="100" not-null="true" sql-type="Varchar(45)"/>
+        </property>
+         <property name="fechaAlta">
+        	<column name="fechaAlta" length="100" not-null="true" sql-type="Date"/>
+        </property>
+               <property name="usuarioModifica">
+        	<column name="usuarioModifica" length="100" not-null="true" sql-type="Varchar(45)"/>
+        </property>
+         <property name="fechaModifica">
+        	<column name="fechaModifica" length="100" not-null="true" sql-type="Date"/>
+        </property>
+
+     </class>
+</hibernate-mapping>

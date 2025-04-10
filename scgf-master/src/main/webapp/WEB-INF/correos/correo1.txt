@@ -1,0 +1,48 @@
+<table class="body-wrap" style="margin: 0;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;height: 100%;background: #efefef;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust: none;width: 100% !important;">
+    	<tr style="margin: 0;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;">
+        	<td class="container" style="margin: 0 auto !important;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;display: block !important;clear: both !important;max-width: 580px !important;">
+        		<table style="margin: 0;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;border-collapse: collapse;width: 100% !important;">
+                	<tr style="margin: 0;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;">
+                    	<td align="center" class="masthead" style="margin: 0;padding: 0px 0;font-size: 100%;font-family: 'arial';line-height: 1.65;background: white;">
+                    		<img src="https://res.cloudinary.com/uniminuto/image/upload/v1742917731/5_ztorab.png" alt="" style="margin: 0 auto;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;max-width: 100%;display: block;">
+          				</td>
+                	</tr>
+                	
+                	<tr style="margin: 0;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;">
+                    	<td class="content" style="margin: 0;padding: 30px 35px;font-size: 100%;font-family: 'arial';line-height: 1.65;background: white;text-align: justify;"><h6 align="center" style="margin: 0;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.25;margin-bottom: 20px;">{titulo}</h6>
+							
+                            <p>{contenido}</p>
+
+							<div style="overflow: hidden;text-align: center;margin: 0;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;" >
+							  <p>Atentamente:</p>
+							  <p align="center" style="margin: 0;padding: 0;font-size: 13px;font-family: 'arial';line-height: 1.65;font-weight: normal;margin-bottom: 20px;"><span class="strong" style="margin: 0;padding: 0;font-size: 100%;font-family: 'arial';font-weight: 900;line-height: 1.65;">Control Gym Fit</span></p>
+						  </div>
+           		 	  </td>
+            		</tr>
+        		</table>
+			</td>
+  		</tr>
+	<tr style="margin: 0;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;">
+	    <td class="container" style="margin: 0 auto !important;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;display: block !important;clear: both !important;max-width: 580px !important;">
+	        <table style="margin: 0;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;border-collapse: collapse;width: 100% !important;">
+	            <tr class="content footer" align="center" style="margin: 0;padding: 30px 35px;font-size: 100%;font-family: 'arial';line-height: 1.65;background: #e6e7e9;text-align: justify;">
+	              	<th width="10%" style="margin: 0;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;"></th>
+				    <th width="5%" style="margin: 0;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;">&nbsp;</th>
+				    <th width="40%" style="margin: 0;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;"><p style="font-size: 9px;margin: 0;padding: 0;font-family: 'arial';line-height: 1.65;font-weight: normal;margin-bottom: 0;color: black;" align="left"><strong>Tel&eacute;fono de oficinas: (601) 466-9710</strong></p></th>
+				    <th width="5%" style="margin: 0;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;">&nbsp;</th>
+				    <th width="40%" style="margin: 0;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;"><p style="font-size: 9px;margin: 0;padding: 0;font-family: 'arial';line-height: 1.65;font-weight: normal;margin-bottom: 0;color: black;"><a href="https://controlgymfit.com/" style="margin: 0;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;color: black;text-decoration: none;font-weight: bold;">https://controlgymfit.com</a></p></th>
+	  			</tr>
+	        </table>
+
+	        <table style="margin: 0;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;border-collapse: collapse;width: 100% !important;">
+	            <tr style="margin: 0;padding: 0;font-size: 100%;font-family: 'arial';line-height: 1.65;">
+	                <td class="content footer" stylle="text-align:justify;" style="margin: 0;padding: 30px 35px;font-size: 100%;font-family: 'arial';line-height: 1.65;background: #e6e7e9;text-align: justify;">
+	                	<p style="margin: 0;padding: 0;font-size: 11px;font-family: 'arial';line-height: 1.65;font-weight: normal;margin-bottom: 0;color: black;">En CONTROLGYMFIT CO, el tratamiento de sus datos personales es de vital importancia para nosotros.</p>
+	            	</td>
+	            </tr>
+	        </table>
+	 
+	    </td>
+	</tr>
+</table>
+

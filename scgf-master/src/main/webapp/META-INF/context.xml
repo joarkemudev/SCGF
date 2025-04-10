@@ -1,0 +1,33 @@
+<Context path="/SCGF" docBase="scgf" debug="0" reloadable="true"
+	antiJARLocking="true" antiResourceLocking="true">
+	<!-- Specify a JDBC datasource -->
+	
+<!--Pruebas Oracle MariaDB /> 	
+<Resource name="jdbc/scgf" auth="Container" type="javax.sql.DataSource"
+		username="scgf-user" password="scgf1234" driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost/scgf?useUnicode=true&amp;characterEncoding=UTF-8" validationQuery="select 1"
+		maxActive="5" maxIdle="10" maxWait="5000" />-->
+		
+<!--Pruebas Pruebas Local /> -->
+<Resource name="jdbc/scgf" auth="Container" type="javax.sql.DataSource"
+		username="sadsscom_scg" password="sads2017" driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost/scgf?useUnicode=true&amp;characterEncoding=UTF-8" validationQuery="select 1"
+		maxActive="5" maxIdle="10" maxWait="5000" />
+
+<!-- Pruebas Local 
+    <Resource name="mail/scgfMail" auth="Container" type="javax.mail.Session" 
+    	mail.smtp.host="smtp.gmail.com" mail.smtp.port="587" mail.smtp.auth="true"
+              mail.smtp.starttls.enable="true" mail.smtp.user="joarkemi@gmail.com"
+              mail.smtp.password="uois udoz mqov sttm " />-->
+    <Resource name="mail/scgfMail" auth="Container" type="javax.mail.Session"
+		mail.transport.protocol="smtp" mail.smtp.host="smtp.gmail.com"
+		mail.smtp.port="587" mail.smtp.starttls.enable="true"  mail.smtp.auth="true"
+		mail.smtp.user="joarkemi@gmail.com" password="gaqdodnfibcekfeg"  mail.debug="true" />
+              
+<!--     <Resource name="mail/scgfMail" auth="Container" type="javax.mail.Session" -->
+<!-- 		mail.transport.protocol="smtp" mail.smtp.host="localhost" -->
+<!-- 		mail.smtp.user="joarkemi@gmail.com"  mail.debug="true" /> -->
+	
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+
+</Context>

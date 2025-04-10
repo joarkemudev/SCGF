@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.controlgymfit.scgf.modelo.entidad">
+	<class name="Cliente" table="clientes">
+		<id name="id">
+			<column name="id" length="10" not-null="true" sql-type="INTEGER" />
+			<generator class="identity" />
+		</id>
+
+		<many-to-one name="empresa" column="idEmpresa" class="com.controlgymfit.scgf.modelo.entidad.Empresa"
+			update="true" insert="true" lazy="false">		
+		</many-to-one>
+		
+		<property name="nombre">
+			<column name="nombre" length="50" not-null="true" sql-type="VARCHAR(50)" />
+		</property>
+		
+		<property name="primerApellido">
+			<column name="primerApellido" length="50" not-null="true" sql-type="VARCHAR(50)" />
+		</property>
+		
+		<property name="segundoApellido">
+			<column name="segundoApellido" length="50" not-null="true" sql-type="VARCHAR(50)" />
+		</property>
+		
+		<property name="tipoIdentificacion" column="tipoIdentificacion"  not-null="true">
+			<type name="org.hibernate.type.EnumType">
+			   <param name="enumClass">com.controlgymfit.scgf.util.enums.TipoIdentificacion</param>
+			   <param name="type">12</param>
+			   <param name="useNamed">true</param>			   
+			</type>
+		</property> 
+		
+		<property name="numIdentificacion">
+			<column name="numIdentificacion" length="50" not-null="true" sql-type="VARCHAR(50)" />
+		</property>
+        
+		<property name="correoElectronico">
+        	<column name="correoElectronico" length="100" not-null="true" sql-type="VARCHAR(80)"/>
+        </property>
+
+		<property name="fechaNacimiento">
+			<column name="fechaNacimiento" length="100" not-null="false" sql-type="Date" />
+		</property>
+		
+		<property name="telefonoMovil">
+			<column name="telefonoMovil" length="13" not-null="true" sql-type="Varchar(13)" />
+		</property>
+		
+		<property name="genero" column="genero"  not-null="true">
+			<type name="org.hibernate.type.EnumType">
+			   <param name="enumClass">com.controlgymfit.scgf.util.enums.TipoGenero</param>
+			   <param name="type">12</param>
+			   <param name="useNamed">true</param>			   
+			</type>
+		</property>
+		
+		<property name="estado" column="estado">
+    		<type name="org.hibernate.type.EnumType">
+        	<param name="enumClass">com.controlgymfit.scgf.util.enums.EstadoCatalogo</param>
+    		</type>
+		</property>
+
+		<property name="usuarioAlta">
+			<column name="usuarioAlta" length="30" not-null="true" sql-type="VARCHAR(30)" />
+		</property>
+
+		<property name="fechaAlta">
+			<column name="fechaAlta" length="100" not-null="false" sql-type="Date" />
+		</property>
+
+		<property name="usuarioModifica">
+			<column name="usuarioModifica" length="30" not-null="true" sql-type="VARCHAR(30)" />
+		</property>
+
+		<property name="fechaModifica">
+			<column name="fechaModifica" length="100" not-null="false" sql-type="Date" />
+		</property>
+		 <many-to-one name="plan" column="idPlan" class="com.controlgymfit.scgf.modelo.entidad.Plan"
+			update="true" insert="true" lazy="false">		
+		</many-to-one>
+	</class>
+</hibernate-mapping>

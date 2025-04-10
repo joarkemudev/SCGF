@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.controlgymfit.scgf.modelo.entidad">
+	<class name="Correo" table="correos">
+    	<comment>Mapeo tabla de Correos</comment>
+    	
+        <id name="id">
+            <column name="id" length="10" not-null="true" sql-type="INTEGER"/>
+            <generator class="identity"/>
+        </id>
+        <property name="asunto">
+        	<column name="asunto" length="10" not-null="true" sql-type="Varchar(100)"/>
+        </property>
+        
+        <property name="titulo">
+        	<column name="titulo" length="20" not-null="true" sql-type="VARCHAR(100)"/>
+        </property>
+        
+        <property name="contenido">
+        	<column name="contenido" length="5000" not-null="true" sql-type="TEXT"/>
+        </property>
+        
+        <property name="tipoActividad" column="tipoActividad"  not-null="true">
+			<type name="org.hibernate.type.EnumType">
+			   <param name="enumClass">com.controlgymfit.scgf.util.enums.TipoActividad</param>
+			   <param name="type">12</param>
+			   <param name="useNamed">true</param>			   
+			</type>
+		</property> 
+        
+        <property name="usuarioAlta">
+        	<column name="usuarioAlta" length="30" not-null="true" sql-type="VARCHAR(30)"/>
+        </property>
+        
+           <property name="fechaAlta">
+        	<column name="fechaAlta" length="100" not-null="false" sql-type="Date"/>
+        </property>
+        
+         <property name="usuarioModifica">
+        	<column name="usuarioModifica" length="30" not-null="true" sql-type="VARCHAR(30)"/>
+        </property>
+        
+        <property name="fechaModifica">
+        	<column name="fechaModifica" length="100" not-null="false" sql-type="Date"/>
+        </property>
+
+     </class>
+</hibernate-mapping>

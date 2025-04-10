@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.controlgymfit.scgf.modelo.entidad">
+	<class name="Empresa" table="empresas">
+    	<comment>Mapeo tabla de Empresas</comment>
+    	
+        <id name="id">
+            <column name="id" length="10" not-null="true" sql-type="INTEGER"/>
+            <generator class="identity"/>
+        </id>
+        <property name="nombre">
+        	<column name="nombre" length="100" not-null="true" sql-type="VARCHAR(100)"/>
+        </property>
+        <property name="responsable">
+        	<column name="representanteLegal" length="100" not-null="true" sql-type="VARCHAR(60)"/>
+        </property>
+         <property name="nit">
+        	<column name="nit" length="12" not-null="true" sql-type="VARCHAR(12)"/>
+        </property>
+        		<property name="correoElectronico">
+        	<column name="correoElectronico" length="100" not-null="true" sql-type="VARCHAR(80)"/>
+        </property>
+		<property name="telefono">
+			<column name="telefono" length="13" not-null="true" sql-type="Varchar(13)" />
+		</property>
+		<property name="rutaImagen">
+        	<column name="rutaImagen" length="100" not-null="true" sql-type="VARCHAR(100)"/>
+        </property>
+        <property name="usuarioAlta">
+        	<column name="usuarioAlta" length="100" not-null="true" sql-type="Varchar(45)"/>
+        </property>
+         <property name="fechaAlta">
+        	<column name="fechaAlta" length="100" not-null="true" sql-type="Date"/>
+        </property>
+         <property name="usuarioModifica">
+        	<column name="usuarioModifica" length="100" not-null="true" sql-type="Varchar(45)"/>
+        </property>
+         <property name="fechaModifica">
+        	<column name="fechaModifica" length="100" not-null="true" sql-type="Date"/>
+        </property>				                
+
+     </class>
+</hibernate-mapping>

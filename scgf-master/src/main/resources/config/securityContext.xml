@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:security="http://www.springframework.org/schema/security"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/security 
+        http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+    <security:global-method-security pre-post-annotations="enabled"/>
+
+    <!-- Rutas públicas -->
+    <security:http pattern="/css/**" security="none"/>
+    <security:http pattern="/assets/**" security="none"/>
+    <security:http pattern="/img/**" security="none"/>
+    <security:http pattern="/js/**" security="none"/>
+    <security:http pattern="/login*" security="none"/>
+    <security:http pattern="/socio/login*" security="none"/>
+    <security:http pattern="/documentos/**" security="none"/>
+    <security:http pattern="/archivosSistema/*" security="none"/>
+    <security:http pattern="/recovery/*" security="none"/>
+    <security:http pattern="/recovery/initRecovery/*" security="none"/>
+    
+    <!-- Configuración principal de seguridad -->
+    <security:http auto-config="true" use-expressions="true" authentication-manager-ref="authenticationManager">
+        <security:intercept-url pattern="/admin/**" access="hasRole('ADMIN')"/>
+        <security:intercept-url pattern="/socio/**" access="hasRole('SOCIO')"/>
+        <security:intercept-url pattern="/**" access="isAuthenticated()"/>
+        
+        <security:form-login 
+            login-page="/login"
+            authentication-failure-url="/loginfailed"
+            default-target-url="/init"/>
+            
+        <security:logout 
+            invalidate-session="true" 
+            logout-success-url="/login?logout"/>
+            
+        <security:access-denied-handler error-page="/denegado"/>
+    </security:http>
+
+    <!-- Configuración del Authentication Manager -->
+    <security:authentication-manager id="authenticationManager">
+        <!-- Proveedor para administradores -->
+        <security:authentication-provider>
+            <security:password-encoder hash="md5"/>
+            <security:jdbc-user-service
+                data-source-ref="dataSource"
+                users-by-username-query="
+                    SELECT nombreAcceso as username, claveAcceso as password,
+                    IF(estado = 1, true, false) as enabled
+                    FROM usuarios WHERE nombreAcceso=?"
+                authorities-by-username-query="
+                    SELECT u.nombreAcceso as username, p.permiso as authority
+                    FROM usuarios u, roles_permiso p 
+                    WHERE u.idRol = p.idRol AND u.nombreAcceso=?"/>
+        </security:authentication-provider>
+        
+        <!-- Proveedor para socios -->
+        <security:authentication-provider>
+            <security:password-encoder hash="md5"/>
+            <security:jdbc-user-service
+                data-source-ref="dataSource"
+                users-by-username-query="
+                    SELECT correoElectronico as username, numIdentificacion as password, 
+                    IF(estado = 1, true, false) as enabled
+                    FROM clientes WHERE correoElectronico=?"
+                authorities-by-username-query="
+                    SELECT correoElectronico as username, 'ROLE_SOCIO' as authority
+                    FROM clientes WHERE correoElectronico=?"/>
+        </security:authentication-provider>
+    </security:authentication-manager>
+</beans>

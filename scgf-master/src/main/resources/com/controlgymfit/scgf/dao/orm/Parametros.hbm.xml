@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.controlgymfit.scgf.modelo.entidad">
+	<class name="Parametros" table="parametros">
+    	<comment>Mapeo tabla de Parámetros</comment>
+    	
+        <id name="id">
+            <column name="id" length="10" not-null="true" sql-type="INTEGER"/>
+            <generator class="identity"/>
+        </id>
+        
+         <property name="tipoAcceso" column="tipoAcceso"  not-null="true">
+			<type name="org.hibernate.type.EnumType">
+			   <param name="enumClass">com.controlgymfit.scgf.util.enums.AccesoArchivos</param>
+			   <param name="type">12</param>
+			   <param name="useNamed">true</param>			   
+			</type>
+		</property> 
+       
+        <property name="urlArchivos">
+        	<column name="urlArchivos" length="200" not-null="true" sql-type="VARCHAR(200)"/>
+        </property>        
+       
+		<property name="usuarioModifica">
+			<column name="usuarioModifica" length="30" not-null="true"
+				sql-type="VARCHAR(30)" />
+		</property>
+
+		<property name="fechaModifica">
+			<column name="fechaModifica" length="100" not-null="false"
+				sql-type="Date" />
+		</property>
+		
+		<property name="bloqueo">
+			<column name="bloqueo" length="1" not-null="false"
+				sql-type="boolean" />
+		</property>
+       
+     </class>
+</hibernate-mapping>
