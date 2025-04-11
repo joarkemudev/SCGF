@@ -78,6 +78,8 @@
 										    <sec:authorize access="!hasAnyRole('EDITA_CLIENTES')">
 										        <!-- Si el usuario no tiene permiso, muestra solo el nombre como texto -->
 										        ${cl.nombre}
+										        
+										        
 										    </sec:authorize>
 										</td> 
 	                                   	<td>${cl.primerApellido}</td>
